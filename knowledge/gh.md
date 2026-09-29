@@ -43,7 +43,7 @@ gh skill publish --dry-run | --fix | --tag vX.Y.Z
 No `--branch` flag. `--pin` = release tag (binary ext) or commit (script ext). Pinned exts are skipped by `upgrade`.
 ```bash
 gh extension install <owner>/<repo> [--pin <tag|sha>]
-gh extension list | upgrade [--all] | remove <name>
+gh extension list | upgrade [--all] | remove <name>   # name w/o "gh-" prefix; local install: only symlink removed
 
 # Install from a branch, frozen at its current HEAD (script ext only)
 gh extension install <owner>/<repo> --pin "$(gh api repos/<owner>/<repo>/commits/<branch> -q .sha)"
