@@ -38,3 +38,16 @@ gh skill install <owner>/<repo> <skill> [--pin vX.Y.Z]
 gh skill update [--all]
 gh skill publish --dry-run | --fix | --tag vX.Y.Z
 ```
+
+## Extensions (`gh extension`)
+No `--branch` flag. `--pin` = release tag (binary ext) or commit (script ext). Pinned exts are skipped by `upgrade`.
+```bash
+gh extension install <owner>/<repo> [--pin <tag|sha>]
+gh extension list | upgrade [--all] | remove <name>
+
+# Install from a branch, frozen at its current HEAD (script ext only)
+gh extension install <owner>/<repo> --pin "$(gh api repos/<owner>/<repo>/commits/<branch> -q .sha)"
+
+# Install tracking a branch (symlink to local clone; update with git pull)
+gh repo clone <owner>/<repo> -- -b <branch> && cd <repo> && gh extension install .
+```
