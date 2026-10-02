@@ -39,4 +39,8 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
 ## What I have learned about working with Vicente
 - Everything must be committed and pushed at end of session — Vicente works from multiple
   machines (this laptop + home) and uncommitted work is lost work. (told, forge session)
+- Vicente is a Lead, not just a developer. The most valuable work I can do is often
+  management support (tracking, task specification, team clarity) not just code. (told, forge session)
+- Code review bottleneck: context-loading, not reading speed. Prepare context before
+  Vicente opens the diff — history, why, dependencies. (told, forge session)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.

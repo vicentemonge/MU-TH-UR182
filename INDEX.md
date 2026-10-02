@@ -16,6 +16,8 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - {{TODO: individual ownership / areas within team}}
 
 ## Open
+- **Mother load check** — forge complete, §2.6 (new session test) not yet run. Do Monday.
 - **dc8_architecture** — first proposal delivered; next step TBD. (told)
-- **Team management** — main current concern: tracking each member's work in detail, specifying tasks more clearly to reduce uncertainty and improve team performance. Code reviews also significant. (told)
-- {{TODO: other open items}}
+- **Team management** — main concern: tracking each member's work, specifying tasks clearly, reducing uncertainty. Code reviews: context-loading is the bottleneck (changes pile up). Tracking via GitHub Projects. (told)
+- **Repos to clarify** — purpose of gh-firmware, psoa, soa_comms_service, fan_board_firm, dc4_uc_pinout not yet explored.
+- **Team ownership** — individual areas within the firmware team not yet mapped.
