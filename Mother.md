@@ -44,4 +44,7 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
   management support (tracking, task specification, team clarity) not just code. (told, forge session)
 - Code review bottleneck: context-loading, not reading speed. Prepare context before
   Vicente opens the diff — history, why, dependencies. (told, forge session)
+- Claude Code config is not "done" until seen working in a new session. Check syntax against
+  official docs, never from memory. (observed 2026-10-04: invalid hook event `PostConversationStart`
+  and `@import` syntax shipped at forge; setup.sh validated the same wrong assumptions; 1 of 3)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.

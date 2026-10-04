@@ -18,7 +18,7 @@ echo "## Mother config check (v$(cat "$VERSION_FILE"))"
 
 # 1. ~/.claude/CLAUDE.md must exist and import Mother.md
 if [ -f "$CLAUDE/CLAUDE.md" ]; then
-  if grep -q '@import ~/Mother/Mother.md' "$CLAUDE/CLAUDE.md"; then
+  if grep -qx '@~/Mother/Mother.md' "$CLAUDE/CLAUDE.md"; then
     ok "CLAUDE.md imports Mother.md"
   else
     err "CLAUDE.md exists but does not import Mother.md"
@@ -27,7 +27,7 @@ else
   err "~/.claude/CLAUDE.md does not exist"
 fi
 
-# 2. ~/.claude/settings.json must have PostConversationStart hook
+# 2. ~/.claude/settings.json must have SessionStart hook
 if [ -f "$CLAUDE/settings.json" ]; then
   if grep -q 'session-start.sh' "$CLAUDE/settings.json"; then
     ok "settings.json has session-start hook"
