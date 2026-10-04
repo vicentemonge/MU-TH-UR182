@@ -34,26 +34,15 @@ if [ -f "$CLAUDE/settings.json" ]; then
   else
     err "settings.json missing session-start hook"
   fi
-  # Must NOT have .cuore deny rules globally (they belong in project settings)
-  if grep -q 'cuore' "$CLAUDE/settings.json"; then
-    err "settings.json has .cuore rules globally — should be project-scoped"
+  # 3. .cuore deny must be global — user settings are the only file that
+  # applies in every project (~/.claude/projects/*/settings.json is never read)
+  if grep -q '"Read(~/.cuore/\*\*)"' "$CLAUDE/settings.json"; then
+    ok "settings.json denies Read on ~/.cuore"
   else
-    ok "settings.json has no global .cuore deny (correct)"
+    err "settings.json missing Read(~/.cuore/**) deny"
   fi
 else
   err "~/.claude/settings.json does not exist"
-fi
-
-# 3. Project-level deny for Mother must block .cuore
-PROJECT_SETTINGS="$CLAUDE/projects/-home-vmonge-Mother/settings.json"
-if [ -f "$PROJECT_SETTINGS" ]; then
-  if grep -q 'cuore' "$PROJECT_SETTINGS"; then
-    ok "Mother project settings deny .cuore"
-  else
-    err "Mother project settings exist but missing .cuore deny"
-  fi
-else
-  err "Mother project settings do not exist ($PROJECT_SETTINGS)"
 fi
 
 # 4. cierre skill symlink
