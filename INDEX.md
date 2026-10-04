@@ -16,7 +16,8 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - {{TODO: individual ownership / areas within team}}
 
 ## Open
-- **Mother load check** — forge complete, §2.6 (new session test) not yet run. Do Monday.
+- **Mother config broken** — Mother does not load: invalid hook event + wrong `@import` syntax; setup.sh validates the broken state; `.cuore` deny may be unenforced. Fixes pending Vicente's OK. See docs/claude-code-config.md. (hook + import: observed 2026-10-04; deny location: unverified)
+- **Mother load check** — §2.6 (new session test) not yet run. Blocked on the config fixes above.
 - **dc8_architecture** — first proposal delivered; next step TBD. (told)
 - **Team management** — main concern: tracking each member's work, specifying tasks clearly, reducing uncertainty. Code reviews: context-loading is the bottleneck (changes pile up). Tracking via GitHub Projects. (told)
 - **Repos to clarify** — purpose of gh-firmware, psoa, soa_comms_service, fan_board_firm, dc4_uc_pinout not yet explored.
