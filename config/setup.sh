@@ -34,13 +34,20 @@ if [ -f "$CLAUDE/settings.json" ]; then
   else
     err "settings.json missing session-start hook"
   fi
-  # 3. .cuore deny must be global — user settings are the only file that
-  # applies in every project (~/.claude/projects/*/settings.json is never read)
-  if grep -q '"Read(~/.cuore/\*\*)"' "$CLAUDE/settings.json"; then
-    ok "settings.json denies Read on ~/.cuore"
+  # 3. ~/.cuore guard: a PreToolUse hook in user settings (the only file that
+  # applies in every project). No deny rules: a deny can't be lifted per project,
+  # so it would also block sessions started inside ~/.cuore.
+  if grep -q 'cuore-guard.sh' "$CLAUDE/settings.json" && [ -f "$MOTHER/hooks/cuore-guard.sh" ]; then
+    ok "settings.json has cuore-guard PreToolUse hook"
   else
-    err "settings.json missing Read(~/.cuore/**) deny"
+    err "settings.json missing PreToolUse hook: sh ~/Mother/hooks/cuore-guard.sh"
   fi
+  if grep -q '~/.cuore' "$CLAUDE/settings.json"; then
+    err "settings.json still has ~/.cuore deny rules — remove them (they block sessions inside ~/.cuore)"
+  else
+    ok "settings.json has no ~/.cuore deny rules"
+  fi
+
 else
   err "~/.claude/settings.json does not exist"
 fi
