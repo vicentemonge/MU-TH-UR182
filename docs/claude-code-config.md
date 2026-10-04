@@ -16,7 +16,7 @@ _Last updated 2026-10-04_
   Source: Claude Code settings warning listing valid events (2026-10-04 session).
 - **CLAUDE.md import syntax is `@path`**, e.g. `@~/Mother/Mother.md` — not `@import path`.
   Source: Claude Code memory docs; observed: with `@import`, Mother.md content was absent from
-  context in the 2026-10-04 session. Fix not yet tested.
+  context in the 2026-10-04 session. Fix verified in a new session (2026-10-04, load check).
 - **`setup.sh` checks must test for the correct state**, not the current one. It currently
   greps for `@import ~/Mother/Mother.md`, so it approves the broken import.
 - **Project settings location (unverified):** Claude Code reads settings from
@@ -33,3 +33,13 @@ _Last updated 2026-10-04_
    bump `config/version` so it re-runs.
 4. `.cuore` deny: move rules to a location Claude Code actually reads (decide where — global
    conflicts with setup.sh's "must be project-scoped" check).
+
+**Status 2026-10-04 (load check):** fixes 1–4 applied (commits c7ef87e, 2efcc4a). 1–2 verified
+working in a new session. 4: deny rules now in `~/.claude/settings.json`; enforcement not tested.
+
+## New problems (load check, 2026-10-04)
+5. **INDEX.md is never loaded.** `~/.claude/CLAUDE.md` imports only Mother.md; Mother.md does not
+   import INDEX.md; `hooks/session-start.sh` does not print it. Options: add `@~/Mother/INDEX.md`
+   to Mother.md (always in context, ~25 lines), or `cat` it from the hook. Vicente decides.
+6. **Hook prints `tail -n 40` of the logbook, not the last entry.** Shows fragments of the
+   previous entry. Fix: print from the last `## ` heading to end of file.
