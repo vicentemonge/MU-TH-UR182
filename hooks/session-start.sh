@@ -4,6 +4,13 @@ CLAUDE="$HOME/.claude"
 VERSION_FILE="$R/config/version"
 INIT_FILE="$CLAUDE/.mother_init"
 
+# Sync first: work moves between machines, and the config check below
+# only sees a version bump made elsewhere after pulling it
+if ! timeout 15 git -C "$R" pull --ff-only -q 2>/dev/null; then
+  echo "## git pull failed in $R — sync manually before working"
+  echo ""
+fi
+
 # Config check: only run if version changed or never checked
 CURRENT=$(cat "$VERSION_FILE" 2>/dev/null)
 LAST=$(cat "$INIT_FILE" 2>/dev/null)
