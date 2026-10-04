@@ -23,7 +23,8 @@ fi
 last=$(ls "$R"/bitacora/*.md 2>/dev/null | sort | tail -n 1)
 if [ -n "$last" ]; then
   echo "## Last logbook entry ($last)"
-  tail -n 40 "$last"
+  # Print from the last "## " heading (entry start) to end of file
+  awk '/^## /{buf=""} {buf=buf $0 "\n"} END{printf "%s", buf}' "$last"
 fi
 
 # Warn about uncommitted changes

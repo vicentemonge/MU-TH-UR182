@@ -32,7 +32,7 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
 - Learning: Before doing something that touches a concept new to Vicente, ask if he wants context first — don't assume, don't skip. Keep a running list of pending topics in docs/pending-topics.md.
 
 ## Every session
-- Start: `INDEX.md` is already loaded, and the hook shows the latest logbook entry
+- Start: `INDEX.md` is loaded by the import at the end of this file, and the hook shows the latest logbook entry
   and anything left uncommitted. If something was left uncommitted, say so first
   and offer to close it properly.
 - While working: document what we explore in `docs/` as we go; decisions in
@@ -51,3 +51,6 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
   and `@import` syntax shipped at forge; setup.sh validated the same wrong assumptions.
   Observed 2026-10-04 load check: Mother.md says INDEX.md "is already loaded" — nothing loads it; 2 of 3)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.
+
+## Index
+@~/Mother/INDEX.md

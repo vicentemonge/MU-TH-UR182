@@ -26,6 +26,11 @@ if [ -f "$CLAUDE/CLAUDE.md" ]; then
 else
   err "~/.claude/CLAUDE.md does not exist"
 fi
+if grep -qx '@~/Mother/INDEX.md' "$MOTHER/Mother.md"; then
+  ok "Mother.md imports INDEX.md"
+else
+  err "Mother.md does not import INDEX.md (@~/Mother/INDEX.md)"
+fi
 
 # 2. ~/.claude/settings.json must have SessionStart hook
 if [ -f "$CLAUDE/settings.json" ]; then
