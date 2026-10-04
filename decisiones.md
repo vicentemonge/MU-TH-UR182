@@ -23,9 +23,9 @@
 - **Reason**: Recommended starting point from crisol.md §2.4. Vicente accepted.
 - **What would reopen it**: After a few weeks of working together, if Vicente finds the prompts excessive, raise to `"acceptEdits"` (edits silent, commands still asked).
 
-### Out of bounds: ~/Workspace/_my_/
+### Out of bounds: ~/.cuore/
 - **Decision**: Permanently out of bounds. Enforced as deny rules in settings.json (Read, Bash ls, Bash find).
-- **Reason**: Personal folder. Vicente stated explicitly.
+- **Reason**: Personal folder. Moved from ~/Workspace/_my_/ to ~/.cuore/ on 2026-10-04.
 - **What would reopen it**: Nothing — this is a hard line.
 
 ### Learning mode
