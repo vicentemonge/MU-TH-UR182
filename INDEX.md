@@ -16,7 +16,7 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - {{TODO: individual ownership / areas within team}}
 
 ## Open
-- **Mother load check** — passed 2026-10-04 (Mother.md loads, hook fires, `/cierre` runs) except: INDEX.md is not loaded by anything, and the hook prints the last 40 lines instead of the last entry. Fix pending Vicente's choice. See docs/claude-code-config.md. (observed)
+- **Mother load check** — passes fully, re-checked in a new session 2026-10-04 (INDEX.md loads via import, hook prints last entry only; adb2bf7). Pending: decisiones.md "Out of bounds" entry is stale. See docs/claude-code-config.md. (observed)
 - **dc8_architecture** — first proposal delivered; next step TBD. (told)
 - **Team management** — main concern: tracking each member's work, specifying tasks clearly, reducing uncertainty. Code reviews: context-loading is the bottleneck (changes pile up). Tracking via GitHub Projects. (told)
 - **Repos to clarify** — purpose of gh-firmware, psoa, soa_comms_service, fan_board_firm, dc4_uc_pinout not yet explored.

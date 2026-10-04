@@ -50,6 +50,8 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
   official docs, never from memory. (observed 2026-10-04: invalid hook event `PostConversationStart`
   and `@import` syntax shipped at forge; setup.sh validated the same wrong assumptions.
   Observed 2026-10-04 load check: Mother.md says INDEX.md "is already loaded" — nothing loads it; 2 of 3)
+- Fixes applied outside `/cierre` go unlogged. (observed 2026-10-04: c7ef87e/2efcc4a, then
+  32278fd/e7e34ff/adb2bf7 — both found later in the commit history; 2 of 3)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.
 
 ## Index
