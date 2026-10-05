@@ -40,3 +40,18 @@
 - **Decision**: Every session, `hooks/session-start.sh` runs `git pull --ff-only origin master`, then runs `config/setup.sh` (always, not only when `config/version` changes). `setup.sh` checks the local config and applies what can be applied (today: the (dot)cuore PreToolUse guard hook in `~/.claude/settings.json`, via `jq`, with a backup to `settings.json.bak-mother`).
 - **Reason**: Vicente's instruction. `~/.claude/settings.json` is per machine and not in this repo; the guard hook (32278fd) was never added on the laptop because `setup.sh` only checked.
 - **What would reopen it**: A config step that can't be applied safely by a script — then `setup.sh` reports it instead.
+
+### EASFP_flash_i2c_cpp: no review-guard pre-commit hook (discard)
+- **Decision**: The `/ipronics-code-review` skill's pre-commit guard (blocks commits carrying `[Pending]` markers) was not installed in this repo.
+- **Reason**: Vicente's choice when asked at the start of the review.
+- **What would reopen it**: `[Pending]` markers reach a shared branch such as `feature/linux_flasher`, `develop` or `main`, or Vicente wants the skill applied as designed.
+
+### EASFP_flash_i2c_cpp: review lives on its own branch
+- **Decision**: Review markers and reports are committed on `feature/linux_flasher_review` (Vicente created and pushed it, 109200b), not on `feature/linux_flasher`.
+- **Reason**: Keep `[Pending]` markers out of the feature branch while still syncing across machines.
+- **What would reopen it**: The guard gets installed, or the team agrees markers can live on feature branches.
+
+### EASFP_flash_i2c_cpp: review base `origin/develop`, FTDI class excluded
+- **Decision**: Diff against `origin/develop` (merge base = initial commit, so the full project). `i2c_ftdi_class.*` excluded.
+- **Reason**: Vicente chose develop. FTDI class is not in the build and was also excluded in the 2026-10-02 manual review.
+- **What would reopen it**: The FTDI class is added to `CMakeLists.txt`.

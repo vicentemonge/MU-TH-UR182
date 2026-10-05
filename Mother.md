@@ -53,7 +53,11 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
 - Fixes applied outside `/cierre` go unlogged. (observed 2026-10-04: c7ef87e/2efcc4a, then
   32278fd/e7e34ff/adb2bf7 — both found later in the commit history. Observed 2026-10-05: Vicente's
   instruction to apply local config at session start was in no record; 3 of 3 — firm rule:
-  log every decision and fix in the moment, not only at `/cierre`)
+  log every decision and fix in the moment, not only at `/cierre`. Not applied 2026-10-05:
+  the EASFP review decisions — guard declined, develop base, review branch — were logged only at `/cierre`)
+- Before acting on an ambiguous message about who does something, check the repo state first.
+  (observed 2026-10-05: read "i create a new branch and push" as an order; Vicente had already
+  created and pushed `feature/linux_flasher_review`, so I made a duplicate branch; 1 of 3)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.
 
 ## Index

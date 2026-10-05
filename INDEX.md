@@ -18,6 +18,7 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 ## Open
 - **Mother load check** — passes fully, re-checked in a new session 2026-10-04 (INDEX.md loads via import, hook prints last entry only; adb2bf7). See docs/claude-code-config.md. (observed)
 - **dc8_architecture** — first proposal delivered; next step TBD. (told)
+- **EASFP_flash_i2c_cpp review** — 26 findings on `feature/linux_flasher_review` (109200b); waiting for Vicente to set Status in `review_report_open.md`, then follow-up pass. See docs/easfp_flash_i2c_cpp.md. (verified)
 - **Team management** — main concern: tracking each member's work, specifying tasks clearly, reducing uncertainty. Code reviews: context-loading is the bottleneck (changes pile up). Tracking via GitHub Projects. (told)
 - **Repos to clarify** — purpose of gh-firmware, psoa, soa_comms_service, fan_board_firm, dc4_uc_pinout not yet explored.
 - **Team ownership** — individual areas within the firmware team not yet mapped.
