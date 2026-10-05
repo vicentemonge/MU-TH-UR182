@@ -42,6 +42,17 @@ if [ -f "$CLAUDE/settings.json" ]; then
   # 3. ~/.cuore guard: a PreToolUse hook in user settings (the only file that
   # applies in every project). No deny rules: a deny can't be lifted per project,
   # so it would also block sessions started inside ~/.cuore.
+  # settings.json is per machine (not in this repo): apply the hook if missing.
+  if ! grep -q 'cuore-guard.sh' "$CLAUDE/settings.json"; then
+    cp "$CLAUDE/settings.json" "$CLAUDE/settings.json.bak-mother"
+    if jq '.hooks.PreToolUse = ((.hooks.PreToolUse // []) + [{"hooks":[{"type":"command","command":"sh $HOME/Mother/hooks/cuore-guard.sh"}]}])' \
+         "$CLAUDE/settings.json" > "$CLAUDE/settings.json.tmp-mother"; then
+      mv "$CLAUDE/settings.json.tmp-mother" "$CLAUDE/settings.json"
+      echo "  [applied] added cuore-guard PreToolUse hook to settings.json (backup: settings.json.bak-mother) — active from the next session"
+    else
+      rm -f "$CLAUDE/settings.json.tmp-mother"
+    fi
+  fi
   if grep -q 'cuore-guard.sh' "$CLAUDE/settings.json" && [ -f "$MOTHER/hooks/cuore-guard.sh" ]; then
     ok "settings.json has cuore-guard PreToolUse hook"
   else

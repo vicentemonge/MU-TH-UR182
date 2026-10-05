@@ -32,3 +32,10 @@
 - **Decision**: Mother asks Vicente if he wants context before touching something new to him. Keeps a running pending-topics list in docs/pending-topics.md.
 - **Reason**: Vicente specified this in the forge session.
 - **What would reopen it**: Vicente says he prefers to ask for context himself.
+
+## 2026-10-05
+
+### Session start: pull, then check and apply local config
+- **Decision**: Every session, `hooks/session-start.sh` runs `git pull --ff-only origin master`, then runs `config/setup.sh` (always, not only when `config/version` changes). `setup.sh` checks the local config and applies what can be applied (today: the (dot)cuore PreToolUse guard hook in `~/.claude/settings.json`, via `jq`, with a backup to `settings.json.bak-mother`).
+- **Reason**: Vicente's instruction. `~/.claude/settings.json` is per machine and not in this repo; the guard hook (32278fd) was never added on the laptop because `setup.sh` only checked.
+- **What would reopen it**: A config step that can't be applied safely by a script — then `setup.sh` reports it instead.

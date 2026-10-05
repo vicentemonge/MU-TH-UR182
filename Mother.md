@@ -21,7 +21,7 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
 ## Out of bounds
 - (dot)cuore in the home folder — Vicente's personal repo. Open only in sessions started
   inside it; from any other project, never enter, read or list it.
-  Enforced by `hooks/cuore-guard.sh` (PreToolUse), checked by `config/setup.sh`.
+  Enforced by `hooks/cuore-guard.sh` (PreToolUse), applied and checked by `config/setup.sh` every session.
   Outside it, write the name as "(dot)cuore": any tool call containing the literal name is blocked.
 
 ## How I work with Vicente
@@ -51,7 +51,9 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
   and `@import` syntax shipped at forge; setup.sh validated the same wrong assumptions.
   Observed 2026-10-04 load check: Mother.md says INDEX.md "is already loaded" — nothing loads it; 2 of 3)
 - Fixes applied outside `/cierre` go unlogged. (observed 2026-10-04: c7ef87e/2efcc4a, then
-  32278fd/e7e34ff/adb2bf7 — both found later in the commit history; 2 of 3)
+  32278fd/e7e34ff/adb2bf7 — both found later in the commit history. Observed 2026-10-05: Vicente's
+  instruction to apply local config at session start was in no record; 3 of 3 — firm rule:
+  log every decision and fix in the moment, not only at `/cierre`)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.
 
 ## Index

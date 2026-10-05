@@ -1,11 +1,9 @@
 #!/bin/sh
 R="$HOME/Mother"
 CLAUDE="$HOME/.claude"
-VERSION_FILE="$R/config/version"
-INIT_FILE="$CLAUDE/.mother_init"
 
 # Sync first: work moves between machines, and the config check below
-# only sees a version bump made elsewhere after pulling it.
+# must run against the latest setup.sh.
 # Explicit remote/branch: don't depend on upstream tracking being configured
 if ! timeout 15 git -C "$R" pull --ff-only -q origin master 2>/dev/null; then
   echo "## git pull failed in $R — sync manually before working"
@@ -19,13 +17,10 @@ if [ -n "$ahead" ] && [ "$ahead" -gt 0 ]; then
   echo ""
 fi
 
-# Config check: only run if version changed or never checked
-CURRENT=$(cat "$VERSION_FILE" 2>/dev/null)
-LAST=$(cat "$INIT_FILE" 2>/dev/null)
-if [ "$CURRENT" != "$LAST" ]; then
-  sh "$R/config/setup.sh"
-  echo ""
-fi
+# Config check + apply on every session: local config (settings.json) is per
+# machine and can drift without any version bump in this repo.
+sh "$R/config/setup.sh"
+echo ""
 
 # Show last logbook entry
 last=$(ls "$R"/bitacora/*.md 2>/dev/null | sort | tail -n 1)
