@@ -27,6 +27,7 @@
 - **Decision**: Off limits from any session not started inside it; a session started inside it may use it (under that repo's own rules). Enforced by the PreToolUse hook `hooks/cuore-guard.sh`: it blocks any tool call that mentions the name unless `CLAUDE_PROJECT_DIR` is that folder. `config/setup.sh` adds the hook to `~/.claude/settings.json` and checks it on every session. Outside it, write the name as "(dot)cuore".
 - **Reason**: Vicente's personal repo, moved from ~/Workspace/_my_/ on 2026-10-04. The first mechanism was deny rules in settings.json (Read, Bash ls, Bash find). 32278fd replaced them because a deny rule can't be lifted per project, so it also blocked sessions started inside the folder.
 - **What would reopen it**: Nothing for the boundary, which is a hard line. The mechanism changes only if the hook turns out not to block.
+- **Verified 2026-10-05**: from a session in `~/Workspace/finite_state_machine`, a Write with the name in its content was blocked. Side effect: plain-text mentions are blocked too, not only paths (open for Vicente to decide).
 
 ### Learning mode
 - **Decision**: Mother asks Vicente if he wants context before touching something new to him. Keeps a running pending-topics list in docs/pending-topics.md.

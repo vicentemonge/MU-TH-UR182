@@ -21,3 +21,4 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - **Team management** — main concern: tracking each member's work, specifying tasks clearly, reducing uncertainty. Code reviews: context-loading is the bottleneck (changes pile up). Tracking via GitHub Projects. (told)
 - **Repos to clarify** — purpose of gh-firmware, psoa, soa_comms_service, fan_board_firm, dc4_uc_pinout not yet explored.
 - **Team ownership** — individual areas within the firmware team not yet mapped.
+- **(dot)cuore guard scope** — verified blocking from outside (2026-10-05). It also blocks the name as plain text, not only paths; Vicente to decide if that's wanted. (observed)
