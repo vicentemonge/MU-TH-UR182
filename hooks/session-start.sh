@@ -5,9 +5,17 @@ VERSION_FILE="$R/config/version"
 INIT_FILE="$CLAUDE/.mother_init"
 
 # Sync first: work moves between machines, and the config check below
-# only sees a version bump made elsewhere after pulling it
-if ! timeout 15 git -C "$R" pull --ff-only -q 2>/dev/null; then
+# only sees a version bump made elsewhere after pulling it.
+# Explicit remote/branch: don't depend on upstream tracking being configured
+if ! timeout 15 git -C "$R" pull --ff-only -q origin master 2>/dev/null; then
   echo "## git pull failed in $R — sync manually before working"
+  echo ""
+fi
+
+# Commits made here but never pushed are invisible from the other machine
+ahead=$(git -C "$R" rev-list --count origin/master..HEAD 2>/dev/null)
+if [ -n "$ahead" ] && [ "$ahead" -gt 0 ]; then
+  echo "## $ahead local commit(s) in $R not pushed to origin — push before working elsewhere"
   echo ""
 fi
 
