@@ -55,3 +55,8 @@
 - **Decision**: Diff against `origin/develop` (merge base = initial commit, so the full project). `i2c_ftdi_class.*` excluded.
 - **Reason**: Vicente chose develop. FTDI class is not in the build and was also excluded in the 2026-10-02 manual review.
 - **What would reopen it**: The FTDI class is added to `CMakeLists.txt`.
+
+### the_truth_is_out_there: error log for every fix (2026-10-07)
+- **Decision**: Every error fixed (data or code) gets an entry in `doc/ERROR_LOG.md` with its introducing and fixing commit; open errors are logged too. Standing rule #4 in the repo's CLAUDE.md (c253ab5). Backfilled from 2026-09-24.
+- **Reason**: Vicente asked to track every error fixed and when it was introduced.
+- **What would reopen it**: The log moves elsewhere (e.g. GitHub Issues/Projects), or the backfill is extended before 2026-09-24.
