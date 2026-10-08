@@ -16,6 +16,9 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - {{TODO: individual ownership / areas within team}}
 
 ## Open
+- **Schedule reminders — do on the next "hola" in a Mother session** — set up with `/schedule` the bedtime and leave-office reminders specified in docs/horario.md ("Avisos"). Vicente chose to run it from Mother, not from (dot)cuore (2026-10-08). (told)
+- **Schedule sync hook** — (dot)cuore SessionStart hook compares its `horario.md` with docs/horario.md; tested by hand, not yet seen in a new (dot)cuore session. (observed)
+- **Team notes: where they may live** — check with HR / company policy whether a lead's notes on reports can live in a personal repo (data protection). Not verified. (2026-10-08)
 - **Mother load check** — passes fully, re-checked in a new session 2026-10-04 (INDEX.md loads via import, hook prints last entry only; adb2bf7). See docs/claude-code-config.md. (observed)
 - **dc8_architecture** — first proposal delivered; next step TBD. (told)
 - **EASFP_flash_i2c_cpp review** — 26 findings on `feature/linux_flasher_review` (109200b); waiting for Vicente to set Status in `review_report_open.md`, then follow-up pass. See docs/easfp_flash_i2c_cpp.md. (verified)

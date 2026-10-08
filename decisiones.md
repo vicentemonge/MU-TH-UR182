@@ -65,3 +65,8 @@
 - **Decision**: Full weekly schedule (sleep, gym, bike, work hours) copied to `docs/horario.md`. Exception to the (dot)cuore "nothing leaves" rule, decided by Vicente after being warned it breaks the rule and is visible in shared sessions.
 - **Reason**: Mother needs it to plan the 8.5 h work day and to remind Vicente of the events.
 - **What would reopen it**: Sessions shared with others start showing it, or the schedule changes (the master copy lives in (dot)cuore).
+
+### Schedule reminders and sync check (2026-10-08)
+- **Decision**: Bedtime reminders Sun–Thu, 30 min before sleep, saying what's next morning (gym/bike); leave-office reminder scheduled daily at arrival + 8.5 h once Vicente confirms arrival at "buenos días". Set up from Mother with `/schedule`, not from (dot)cuore. Sync of the two `horario.md` copies is checked only by a SessionStart hook in (dot)cuore.
+- **Reason**: Vicente's choice to run reminders from Mother. Mother can't read (dot)cuore from outside, so only (dot)cuore can compare.
+- **What would reopen it**: Reminders fail to arrive, or the schedule moves out of (dot)cuore.
