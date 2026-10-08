@@ -60,3 +60,8 @@
 - **Decision**: Every error fixed (data or code) gets an entry in `doc/ERROR_LOG.md` with its introducing and fixing commit; open errors are logged too. Standing rule #4 in the repo's CLAUDE.md (c253ab5). Backfilled from 2026-09-24.
 - **Reason**: Vicente asked to track every error fixed and when it was introduced.
 - **What would reopen it**: The log moves elsewhere (e.g. GitHub Issues/Projects), or the backfill is extended before 2026-09-24.
+
+### Personal schedule copied into Mother (2026-10-08)
+- **Decision**: Full weekly schedule (sleep, gym, bike, work hours) copied to `docs/horario.md`. Exception to the (dot)cuore "nothing leaves" rule, decided by Vicente after being warned it breaks the rule and is visible in shared sessions.
+- **Reason**: Mother needs it to plan the 8.5 h work day and to remind Vicente of the events.
+- **What would reopen it**: Sessions shared with others start showing it, or the schedule changes (the master copy lives in (dot)cuore).
