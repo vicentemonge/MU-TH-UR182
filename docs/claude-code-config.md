@@ -26,6 +26,12 @@ _Last updated 2026-10-04_
   `~/.claude/projects/-home-vmonge-Mother/settings.json` do nothing. Verify with `/permissions`
   from a session in `~/Mother`.
 
+### Cloud routines (`/schedule`), checked 2026-10-08
+- Cron and `run_once_at` are UTC only; no time-zone field. Madrid DST → update crons by hand twice a year. (skill doc)
+- A routine run notifies Vicente on desktop and phone. (told, 2026-10-05 routine)
+- The server attaches the Claude_Docs and Claude_Code_Remote connectors even when none are passed. (observed, create response)
+- Routines can't be deleted via API; only at claude.ai/code/routines. (skill doc)
+
 ## Fixes pending (need Vicente's OK — global config)
 1. `settings.json`: `PostConversationStart` → `SessionStart` (matcher: TBD).
 2. `CLAUDE.md`: `@import ~/Mother/Mother.md` → `@~/Mother/Mother.md`.

@@ -70,3 +70,8 @@
 - **Decision**: Bedtime reminders Sun–Thu, 30 min before sleep, saying what's next morning (gym/bike); leave-office reminder scheduled daily at arrival + 8.5 h once Vicente confirms arrival at "buenos días". Set up from Mother with `/schedule`, not from (dot)cuore. Sync of the two `horario.md` copies is checked only by a SessionStart hook in (dot)cuore.
 - **Reason**: Vicente's choice to run reminders from Mother. Mother can't read (dot)cuore from outside, so only (dot)cuore can compare.
 - **What would reopen it**: Reminders fail to arrive, or the schedule moves out of (dot)cuore.
+
+### Bedtime reminders as UTC cloud routines, DST updated by hand (2026-10-08)
+- **Decision**: Two recurring routines in UTC set for summer time: `Bedtime — before gym` `45 20 * * 0,2,4` (trig_01U5uvQPXyygdFveYnprFbLU) and `Bedtime — before bike` `15 20 * * 1,3` (trig_016kMuvejcpg26DPjmKQ7r2A). A one-off `DST switch` routine fires 2026-10-25T09:00Z (trig_01TVEMNAyxfhEPuGWnd7sKdD) to remind Vicente to move them to `45 21` / `15 21`. Same in reverse at the end of March.
+- **Reason**: Routines accept only UTC cron, with no time zone. Vicente confirmed that routines notify him on desktop and phone (seen with the 2026-10-05 reminder). Updating twice a year was chosen over duplicate crons with a time check in the agent.
+- **What would reopen it**: Routines gain a time-zone field, a reminder fails to arrive, or the schedule in `docs/horario.md` changes.

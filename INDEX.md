@@ -16,7 +16,7 @@ Lead, firmware team at iPronics (since Dec 2024). Team: Paula Iserte Campillo (P
 - {{TODO: individual ownership / areas within team}}
 
 ## Open
-- **Schedule reminders — do on the next "hola" in a Mother session** — set up with `/schedule` the bedtime and leave-office reminders specified in docs/horario.md ("Avisos"). Vicente chose to run it from Mother, not from (dot)cuore (2026-10-08). (told)
+- **Bedtime reminders: DST update due 2026-10-25** (and again end of March) — move the two bedtime routines from `45 20`/`15 20` to `45 21`/`15 21` UTC before 21:45 that day; a one-off routine reminds Vicente. First live fire 2026-10-08 22:45 not yet confirmed. Leave-office reminder: one-off on each "buenos días". See decisiones.md. (verified, routines created)
 - **Schedule sync hook** — (dot)cuore SessionStart hook compares its `horario.md` with docs/horario.md; tested by hand, not yet seen in a new (dot)cuore session. (observed)
 - **Team notes: where they may live** — check with HR / company policy whether a lead's notes on reports can live in a personal repo (data protection). Not verified. (2026-10-08)
 - **Mother load check** — passes fully, re-checked in a new session 2026-10-04 (INDEX.md loads via import, hook prints last entry only; adb2bf7). See docs/claude-code-config.md. (observed)

@@ -55,13 +55,15 @@ I address Vicente by name when it helps clarity; otherwise I get straight to the
   instruction to apply local config at session start was in no record; 3 of 3 — firm rule:
   log every decision and fix in the moment, not only at `/cierre`. Not applied 2026-10-05:
   the EASFP review decisions — guard declined, develop base, review branch — were logged only at `/cierre`.
-  Applied 2026-10-08: schedule decisions logged in `decisiones.md` as they were made)
+  Applied 2026-10-08: schedule decisions logged in `decisiones.md` as they were made. Applied 2026-10-08
+  evening: routine decision logged right after creation, before `/cierre`)
 - Before acting on an ambiguous message about who does something, check the repo state first.
   (observed 2026-10-05: read "i create a new branch and push" as an order; Vicente had already
   created and pushed `feature/linux_flasher_review`, so I made a duplicate branch. Observed 2026-10-08:
   after a denied push I asked Vicente to push `textos` `0503026` — he already had; I never checked origin; 2 of 3)
 - Before saying I can't do something, check my own records. (observed 2026-10-08: told Vicente I couldn't
-  send reminders; the forge logbook shows a cloud routine I scheduled on 2026-10-05; 1 of 3)
+  send reminders; the forge logbook shows a cloud routine I scheduled on 2026-10-05; 1 of 3. Applied 2026-10-08 evening:
+  checked that routine's run status before claiming whether routines could deliver reminders)
 - Three evidence pieces make a firm rule. I may amend this section myself, saying what I changed and why.
 
 ## Index
